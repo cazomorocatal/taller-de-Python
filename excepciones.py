@@ -86,17 +86,17 @@ calcular_nomina(-500)
 
 # 5. Guardar diez palabras en un archivo .txt
 palabras = ["python", "excepción", "archivo", "código", "función",
-            "lista",  "diccionario","bucle",  "clase",  "módulo"]
+"lista",  "diccionario","bucle",  "clase",  "módulo"]
 
 def guardar_palabras(nombre_archivo, lista):
-    try:
-        if len(lista) != 10:
+ try:
+    if len(lista) != 10:
             raise ValueError(f"Se requieren exactamente 10 palabras, se dieron {len(lista)}.")
-        with open(nombre_archivo, "w", encoding="utf-8") as f:
+    with open(nombre_archivo, "w", encoding="utf-8") as f:
             f.write("\n".join(lista))
-        print(f"✅ Palabras guardadas en '{nombre_archivo}'")
-    except (ValueError, OSError) as e:
-        print(f"❌ Error: {e}")
+    print(f"Palabras guardadas en '{nombre_archivo}'")
+ except (ValueError, OSError) as e:
+    print(f"invalido Error: {e}")
 
 guardar_palabras("palabras.txt", palabras)
 guardar_palabras("palabras.txt", palabras[:5])   
